@@ -96,7 +96,7 @@ class RandomWordsState extends State<RandomWordsWidget> {
             //那就将set集合里移除
             _collected.remove(pair);
           } else {
-            //添加
+            //添加单词
             _collected.add(pair);
           }
         });
