@@ -117,8 +117,6 @@ void main() {
 //
 //
 
-
-
 //用无状态控件显示
 class MyApp extends StatelessWidget {
   @override
@@ -134,13 +132,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePageWidget extends StatefulWidget{
+class MyHomePageWidget extends StatefulWidget {
   @override
-  State<StatefulWidget> createState(){
-     return new MyHomePage();
+  State<StatefulWidget> createState() {
+    return new MyHomePage();
   }
 }
-
 
 class MyHomePage extends State<MyHomePageWidget> {
   //获取TextEditingController
@@ -161,11 +158,11 @@ class MyHomePage extends State<MyHomePageWidget> {
     new Tab(text: 'Go'),
   ];
   //底部数据
-  final Map bottomMap ={
-    "首页":Icon(Icons.home),
-    "朋友圈":Icon(Icons.camera),
-    "信息":Icon(Icons.message),
-    "其他":Icon(Icons.devices_other),
+  final Map bottomMap = {
+    "首页": Icon(Icons.home),
+    "朋友圈": Icon(Icons.camera),
+    "信息": Icon(Icons.message),
+    "其他": Icon(Icons.devices_other),
   };
 
   int _index = 0;
@@ -179,7 +176,7 @@ class MyHomePage extends State<MyHomePageWidget> {
           //底部
           bottom: new TabBar(
             indicatorColor: Colors.red, //指示器颜色 如果和标题栏颜色一样会白色
-            tabs: myTabs,//绑定数据
+            tabs: myTabs, //绑定数据
             isScrollable: true, //是否可以滑动
           ),
           //AppBar内容显示
@@ -291,30 +288,29 @@ class MyHomePage extends State<MyHomePageWidget> {
           }).toList(),
         ),
         bottomNavigationBar: BottomNavigationBar(
-            items: (){
+            items: () {
               var items = <BottomNavigationBarItem>[];
-              bottomMap.forEach((k,v){
+              bottomMap.forEach((k, v) {
                 items.add(BottomNavigationBarItem(
-                  title:Text(k),//取map的值
-                  icon : v,//取map的图标
-                  backgroundColor:Colors.red,//背景红色
+                  title: Text(k), //取map的值
+                  icon: v, //取map的图标
+                  backgroundColor: Colors.red, //背景红色
                 ));
               });
               return items;
             }(),
-             currentIndex: _index,//选中第几个
-             onTap:(position){
-               Fluttertoast.showToast(
-                   msg: 'text inputted: $position',
-                   toastLength: Toast.LENGTH_SHORT,
-                   gravity: ToastGravity.CENTER,
-                   timeInSecForIos: 1,
-               );
-               setState(() {
-                 _index = position;//状态更新
-               });
-             }
-            ),
+            currentIndex: _index, //选中第几个
+            onTap: (position) {
+              Fluttertoast.showToast(
+                msg: 'text inputted: $position',
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIos: 1,
+              );
+              setState(() {
+                _index = position; //状态更新
+              });
+            }),
         //左侧抽屉
         drawer: Drawer(
           child: ListView(

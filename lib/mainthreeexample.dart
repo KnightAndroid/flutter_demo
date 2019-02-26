@@ -57,6 +57,7 @@ class MyHomeWidget extends StatelessWidget{
            new Icon(
              Icons.star,
              color:Colors.red[400],
+
            ),
 
            new Text('41'),
